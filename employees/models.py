@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 # Create your models here.
 
 class Employee(models.Model):
-    uuid = models.UUIDField(default=uuid4, primary_key=True)
+    uuid = models.UUIDField(default=uuid4, primary_key=True, editable=False)
     enrollment = models.CharField(_('num empleado'), max_length=10, unique=True)
     anti = models.IntegerField(default=0, blank=True, null=True)
     CURP = models.CharField(default="", max_length=20, blank=True, null=True)
