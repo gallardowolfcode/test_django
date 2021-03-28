@@ -6,15 +6,19 @@ from .models import Request
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'first_name']
+        fields = ['id', 'first_name']
+
+class PostSerializer(serializers.ModelSerializer):
+
+    user = UserSerializer
 
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
-        exclude = []
+        exclude = ['uuid']
 
 class RequestSerializer(serializers.ModelSerializer):
 
     class Meta:
-        modek = Request
+        model = Request
         exclude = []

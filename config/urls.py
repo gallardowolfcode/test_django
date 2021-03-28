@@ -19,7 +19,7 @@ from rest_framework import routers, serializers, viewsets
 from employees.views import EmployeeViewset, UserViewset, RequestViewset
 from users.views import UserViewset
 
-router = routers.DefaultRouter()
+router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'employees', UserViewset)
 router.register(r'employees', EmployeeViewset)
 router.register(r'employees', RequestViewset)
