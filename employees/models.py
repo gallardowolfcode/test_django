@@ -19,3 +19,12 @@ class Employee(models.Model):
     def __str__(self):
         return self.enrollment
 
+class Request(models.Model):
+    uuid = models.UUIDField(default=uuid4, primary_key=True, unique=True)
+    type = models.CharField(default="", max_length=30, blank=True, null=True)  # Tramite
+    description = models.CharField(default="", max_length=50, blank=True, null=True)
+    date = models.DateTimeField(blank=True, null=True, auto_now_add=True)
+
+    def __str__(self):
+        return self.type
+    
