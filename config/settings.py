@@ -14,17 +14,17 @@ from pathlib import Path
 from datetime import timedelta
 from typing import List, Tuple
 
-MINIO_ENDPOINT = 'minio.your-company.co.uk'
-MINIO_ACCESS_KEY = 'yourMinioAccessKey'
-MINIO_SECRET_KEY = 'yourVeryS3cr3tP4ssw0rd'
-MINIO_USE_HTTPS = True
+MINIO_ENDPOINT = 'localhost:9000'
+MINIO_ACCESS_KEY = 'AKIAIOSFODNN7EXAMPLE'
+MINIO_SECRET_KEY = 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'
+MINIO_USE_HTTPS = False
 MINIO_URL_EXPIRY_HOURS = timedelta(days=1)  # Default is 7 days (longest) if not defined
 MINIO_CONSISTENCY_CHECK_ON_START = False
 MINIO_PRIVATE_BUCKETS = [
-    'django-backend-dev-private',
+    'private',
 ]
 MINIO_PUBLIC_BUCKETS = [
-    'django-backend-dev-public',
+    'public',
 ]
 MINIO_POLICY_HOOKS: List[Tuple[str, dict]] = []
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -49,11 +49,11 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django_minio_backend.apps.DjangoMinioBackendConfig',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_minio_backend',
     'employees',
     'users',
 ]
