@@ -16,7 +16,6 @@
 
 - Python 3.7>
 - Virtualenv
----sdghfgsgda
 ## Instalation
 
     $ python3 -m venv venv
